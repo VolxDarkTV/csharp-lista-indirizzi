@@ -17,32 +17,32 @@ namespace csharp_lista_indirizzi
 
         public Address(string name, string last, string street, string city, string province, string zip)
         {
-            if(name != null)
+            if(!string.IsNullOrEmpty(name))
                 Name = name;
             else
                 throw new ArgumentNullException(nameof(name));
-
-            if(last != null)
+            
+            if (!string.IsNullOrEmpty(last))
                 Last = last;
             else 
                 throw new ArgumentNullException(nameof(last));
 
-            if(street != null)
+            if(!string.IsNullOrEmpty(street))
                 Street = street;
             else
                 throw new ArgumentNullException(nameof(street));
 
-            if(city != null)
+            if(!string.IsNullOrEmpty(city))
                 City = city;
             else 
                 throw new ArgumentNullException(nameof(city));
 
-            if(province != null)
+            if(!string.IsNullOrEmpty(province))
                 Province = province;
             else 
                 throw new ArgumentNullException(nameof(province));
 
-            if(zip != null)
+            if(!string.IsNullOrEmpty(zip))
                 Zip = zip;
             else 
                 throw new ArgumentNullException(nameof(zip));

@@ -48,20 +48,31 @@
 
                 try
                 {
+                    
                     string[] camp = line.Split(',');
-                    Console.WriteLine($"Name: {camp[0]}");
-                    Console.WriteLine($"Last: {camp[1]}");
-                    Console.WriteLine($"Street: {camp[2]}");
-                    Console.WriteLine($"City: {camp[3]}");
-                    Console.WriteLine($"Province: {camp[4]}");
-                    Console.WriteLine($"ZIP: {camp[5]}");
 
-                    addresses.Add(new Address(camp[0], camp[1], camp[2], camp[3], camp[4], camp[5]));
+                    if(camp.Length == 6 ) 
+                    {
+                        Console.WriteLine($"Name: {camp[0]}");
+                        Console.WriteLine($"Last: {camp[1]}");
+                        Console.WriteLine($"Street: {camp[2]}");
+                        Console.WriteLine($"City: {camp[3]}");
+                        Console.WriteLine($"Province: {camp[4]}");
+                        Console.WriteLine($"ZIP: {camp[5]}");
+
+                        addresses.Add(new Address(camp[0], camp[1], camp[2], camp[3], camp[4], camp[5]));
+                    }else
+                    {
+                        Console.WriteLine("Errore!!!");
+                    }
+
+                    
+                    
                     Console.WriteLine("\n------------------\n");
                 }
-                catch (ArgumentNullException)
+                catch (ArgumentNullException e)
                 {
-                    Console.WriteLine("Argomenti nulli!");
+                    Console.WriteLine(e);
                 }
                 catch (Exception)
                 {
